@@ -24,8 +24,11 @@ a.mynavbar-brand{
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
 }
-.card-deck .card:not(:last-child) {
-    margin-right: 15px;
+.card-deck .card {
+    margin-right:35px;
+}
+.card-block{
+    /*margin-right: 35px;*/
 }
 .card-deck .card {
     display: -webkit-box;
