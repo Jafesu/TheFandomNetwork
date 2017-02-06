@@ -1,5 +1,5 @@
 .mynavbar-inverse{
-	background-image: linear-gradient(to bottom,#ff1a1a 0,#222 100%);
+	background-image: linear-gradient(to bottom,#ff1a1a 0,#222 98%);
 }
 .mynavbar-brand, .navbar-nav > li > a {
     text-shadow: 0 1px 0 rgba(153, 255, 102, .25);
