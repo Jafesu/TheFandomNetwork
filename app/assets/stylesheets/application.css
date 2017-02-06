@@ -184,5 +184,6 @@ body {
     }
 }
 #notif{
+    font-weight: bold;
     text-align: center;
 }
