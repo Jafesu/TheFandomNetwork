@@ -1,3 +1,9 @@
-navbar-inverse{
-	background-image: linear-gradient(to bottom,#ff1a1a 0,#e60000 100%);
+.card-deck {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
 }
