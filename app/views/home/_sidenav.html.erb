@@ -1,0 +1,28 @@
+<div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+              
+                <li class="sidebar-brand">
+                <% if current_user %>
+                    <a href="#">
+                       <%= current_user.first_name %> <%= current_user.last_name %> (Jafesu)
+                    </a>
+                <% else %>
+                    <a href="#" data-toggle="modal" data-target="#login-modal">
+                       Have an account? Login
+                    </a>
+                <% end %>
+                <li>
+                    <a href="#">Your Fandoms</a>
+                </li>
+                <li>
+                    <a href="#">Your Friends</a>
+                </li>
+                <li>
+                    <a href="#">Upcomming Events</a>
+                </li>
+                <li>
+                    <a href="#">Find Fandoms</a>
+                </li>
+            </ul>
+        </div>
