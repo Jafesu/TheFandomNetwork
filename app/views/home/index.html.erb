@@ -32,21 +32,11 @@
 		      <p class="card-text"><%= image_tag q.image.url(:medium) %></p>
 		     <% else %>
 		     <% end %>
-		      <p class="card-text date">Posted <%= time_ago_in_words q.created_at %> ago</p>
-
-		      <% if User.count > 0 %>
-		      <p class="card-text date"><a href="<%= post_path(q) %>"><%= User.count %> Comments</a></p>
-		      <% else %> 
-		      <% end %>
+		      <p class="card-text date">Posted <%= time_ago_in_words q.created_at %> ago
+		      </br> <button type="button" class="btn btn-xs btn-primary">View Comments</button></p>
 		    </div>
 		  </div>
-		  <div class="card">
-		    <div class="card-block">
-		      <h4 class="card-title well"><img src="<%= q.gravatar %>" height="40px"> <%= q.first_name %> <%= q.last_name %></h4>
-		      <p class="card-text"><%= q.post %></p>
-		      <p class="card-text date">Posted <%= time_ago_in_words q.created_at %> ago</br> <button type="button" class="btn btn-xs btn-primary">View Comments</button></p>
-		    </div>
-		  </div>
+		  
 	</div>
 	<% end %>
 	</div>
