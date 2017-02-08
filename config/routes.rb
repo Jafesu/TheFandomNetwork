@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :comments
   resources :posts
+  resources :users
   root 'home#index'
 
   get 'signup' => 'users#new'
-  resources :users
+ 
 
     get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
