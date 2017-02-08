@@ -4,7 +4,7 @@
               
                 <li class="sidebar-brand">
                 <% if current_user %>
-                    <a href="#">
+                    <a href="/users/show/<%= current_user.id %>">
                        <%= current_user.first_name %> <%= current_user.last_name %> (Jafesu)
                     </a>
                 <% else %>
