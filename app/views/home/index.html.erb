@@ -7,13 +7,15 @@
 
 
 	<% if current_user %>
-		<%= form_for :post, url: '/posts', html: { class: 'form-horizontal' } do %>
+		<%= form_for :post, url: '/posts', html: { class: 'form-horizontal', multipart: true } do %>
 	       <div class="well" id="post">
 	        <textarea class="form-control" name="post[post]" rows="5" id="comment" placeholder="Hello <%= current_user.first_name %> what would you like to say?"></textarea> 
 	        <input type="hidden" name="post[email]" value="<%= current_user.email %>"/>
 	        <input type="hidden" name="post[first_name]" value="<%= current_user.first_name %>" />
 	        <input type="hidden" name="post[last_name]" value="<%= current_user.last_name %>" />
 	        <input type="hidden" name="post[user_id]"" value="<%= current_user.id %>"/>
+	        <%= f.label :image %><br>
+	        <%= f.file_field :image %>
 	        <button type="submit" class="btn btn-primary">Post </button>
 	       </div>
 	    <% end %>
@@ -22,10 +24,7 @@
    <div class="container" id="posts">
    <div class="row">
     <% @posts.each do |q| %>
-
-	
-
-		<div class="card-deck">
+    <div class="card-deck">
 		  <div class="card">
 		    <div class="card-block">
 		      <h4 class="card-title well"><img src="<%= q.gravatar %>" height="40px"><a href="/users/show/<%= q.user_id %>" ><%= q.first_name %> <%= q.last_name %></a></h4>
