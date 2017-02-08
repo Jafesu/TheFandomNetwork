@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 	
   delete 'logout' => 'sessions#destroy'
 
-  get 'users/show/:id' => 'users#show'
+  get 'users/show/:first_name' => 'users#show'
   get 'users/show' => 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
