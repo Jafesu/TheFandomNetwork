@@ -13,6 +13,8 @@
       <div class="media-body">
         <h4 class="media-heading"><%= @post.first_name %> <%= @post.last_name %></h4>
         <%= @post.post %>
+
+        <%= image_tag @post.image.url(:medium) %>
       </div>
     </div>
   </div>
