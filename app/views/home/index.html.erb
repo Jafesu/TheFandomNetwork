@@ -6,62 +6,43 @@
 
 
 	<% if current_user %>
+		<%= form_for :post, url: '/posts', html: { class: 'form-horizontal' } do %>
 	       <div class="well" id="post">
-	        <textarea class="form-control" rows="5" id="comment"></textarea> 
-	        <button type="button" class="btn btn-primary">Post </button>
-	       </div
+	        <textarea class="form-control" name="post[post]" rows="5" id="comment"></textarea> 
+	        <input type="hidden" name="post[email]" value="<%= current_user.email %>"/>
+	        <input type="hidden" name="post[first_name]" value="<%= current_user.first_name %>" />
+	        <input type="hidden" name="post[last_name]" value="<%= current_user.last_name %>" />
+	        <button type="submit" class="btn btn-primary">Post </button>
+	       </div>
+	    <% end %>
 	<% else %>
     <% end %>
-	<div class="row">
+   <div class="container" id="posts">
+   <div class="row">
+    <% @posts.each do |q| %>
+
+	
 
 		<div class="card-deck">
 		  <div class="card">
 		    <div class="card-block">
-		      <h4 class="card-title well"><img src="http://systemout.net/images/Gravatar-icon.png" height="40px"> Poster Name</h4>
-		      <p class="card-text">This is where the post Content will be</p>
+		      <h4 class="card-title well"><img src="<%= q.gravatar %>" height="40px"> <%= q.first_name %> <%= q.last_name %></h4>
+		      <p class="card-text"><%= q.post %></p>
+		      <p class="card-text date">Posted <%= time_ago_in_words q.created_at %> ago</p>
 		    </div>
 		  </div>
 		  <div class="card">
 		    <div class="card-block">
-		      <h4 class="card-title well"><img src="http://systemout.net/images/Gravatar-icon.png" height="40px"> Poster Name</h4>
-		      <p class="card-text">This is where the post Content will be</p>
+		      <h4 class="card-title well"><img src="<%= q.gravatar %>" height="40px"> <%= q.first_name %> <%= q.last_name %></h4>
+		      <p class="card-text"><%= q.post %></p>
+		      <p class="card-text date">Posted <%= time_ago_in_words q.created_at %> ago</p>
 		    </div>
 		  </div>
-		  <div class="card">
-		    <div class="card-block">
-		      <h4 class="card-title well"><img src="http://systemout.net/images/Gravatar-icon.png" height="40px"> Poster Name</h4>
-		      <p class="card-text">This is where the post Content will be</p>
-		    </div>
-		  </div>
-		</div>
-
+	</div>
+	<% end %>
 	</div>
 
 	<br>
-
-	<div class="row">
-
-		<div class="card-deck">
-		  <div class="card">
-		    <div class="card-block">
-		      <h4 class="card-title well"><img src="http://systemout.net/images/Gravatar-icon.png" height="40px"> Poster Name</h4>
-		      <p class="card-text">This is where the post Content will be</p>
-		    </div>
-		  </div>
-		  <div class="card">
-		    <div class="card-block">
-		      <h4 class="card-title well"><img src="http://systemout.net/images/Gravatar-icon.png" height="40px"> Poster Name</h4>
-		      <p class="card-text">This is where the post Content will be</p>
-		    </div>
-		  </div>
-		  <div class="card">
-		    <div class="card-block">
-		      <h4 class="card-title well"><img src="http://systemout.net/images/Gravatar-icon.png" height="40px"> Poster Name</h4>
-		      <p class="card-text">This is where the post Content will be</p>
-		    </div>
-		  </div>
-		</div>
-
-	</div>
+	
 
 </div>

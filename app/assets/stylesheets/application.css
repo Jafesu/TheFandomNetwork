@@ -191,3 +191,11 @@ body {
     /*font-weight: bold;*/
     text-align: center;
 }
+.card-deck{
+    margin-right: 80px;
+}
+.date{
+    text-align: right;
+    font-style: italic;
+    font-size: 10px;
+}
