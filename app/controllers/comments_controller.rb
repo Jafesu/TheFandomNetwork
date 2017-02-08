@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 	def create
  
-	    Comment.create(comment_params)
+	    Comment.create(:email, :first_name, :last_name, :post, :post_id)
 
 		redirect_to post
 	end
