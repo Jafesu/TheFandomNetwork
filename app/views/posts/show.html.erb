@@ -43,6 +43,7 @@
         <%= form_for :comment, url: '/comments', html: { class: 'form-horizontal' } do %>
         <textarea class="form-control" name="comment[post]" rows="2" id="comment" placeholder="Hello <%= current_user.first_name %> what would you like to say?"></textarea> 
           <input type="hidden" name="comment[email]" value="<%= current_user.email %>"/>
+          <input type="hidden" name="comment[post_id]" value="<%= @post.id %>" />
           <button type="submit" class="btn btn-primary">Post </button>
         <% end %> 
          </div>
