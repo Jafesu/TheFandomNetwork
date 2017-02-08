@@ -5,9 +5,9 @@
 
 <% if current_user.id == @user.id %>
 
-<a href="/users/<%= @user.id %>/edit"><h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<a href="/users/<%= @user.id %>/edit"><h1><%= @user.first_name %> <%= @user.last_name %>
 <span class="glyphicon glyphicon-pencil
-"></span></a>
+"></span></h1></a>
 
 <% else %>
 
