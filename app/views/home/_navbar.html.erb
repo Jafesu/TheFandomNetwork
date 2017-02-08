@@ -12,8 +12,8 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      <% if current_user %>
-            <ul>
-              <li ><form><%= link_to "Log out", logout_path, method: "delete", class: "pull-right btn btn-success navbar-btn btn-sm"  %></form></li>
+            <ul class="nav navbar-nav navbar-right">
+              <li><form><%= link_to "Log out", logout_path, method: "delete", class: "pull-right btn btn-success navbar-btn btn-sm"  %></form></li>
           </ul>
           <% else %> 
           <ul class="nav navbar-nav navbar-right">
