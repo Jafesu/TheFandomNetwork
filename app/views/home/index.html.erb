@@ -7,7 +7,7 @@
 
 
 	<% if current_user %>
-		<%= form_for :post, url: '/posts', html: { class: 'form-horizontal', multipart: true } do %>
+		<%= form_for :post, url: '/posts', html: { class: 'form-horizontal', multipart: true } do |f| %>
 	       <div class="well" id="post">
 	        <textarea class="form-control" name="post[post]" rows="5" id="comment" placeholder="Hello <%= current_user.first_name %> what would you like to say?"></textarea> 
 	        <input type="hidden" name="post[email]" value="<%= current_user.email %>"/>
