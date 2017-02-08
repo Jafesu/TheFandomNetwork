@@ -28,7 +28,7 @@
 		    <div class="card-block">
 		      <h4 class="card-title well"><img src="<%= q.gravatar %>" height="40px"><a href="/users/show/<%= q.user_id %>" ><%= q.first_name %> <%= q.last_name %></a></h4>
 		      <p class="card-text"><%= q.post %></p>
-		     <% if q.image %>
+		     <% if q.has_attached_file %>
 		      <p class="card-text"><%= image_tag q.image.url(:medium) %></p>
 		     <% else %>
 		     <% end %>
