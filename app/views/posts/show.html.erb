@@ -38,7 +38,7 @@
         <% end %>
 
         
-
+      <% if current_user %>
         <div>
         <%= form_for :comment, url: '/comments', html: { class: 'form-horizontal' } do %>
         <textarea class="form-control" name="comment[post]" rows="2" id="comment" placeholder="Hello <%= current_user.first_name %> what would you like to say?"></textarea> 
@@ -49,8 +49,8 @@
           <button type="submit" class="btn btn-primary">Post </button>
         <% end %> 
          </div>
+        <% end %>
         </div>
-
       </div>
     </div>
   </div>
