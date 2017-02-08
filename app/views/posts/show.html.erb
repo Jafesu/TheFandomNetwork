@@ -1,0 +1,56 @@
+<div class="alert alert-warning" role="alert" id="notif">
+        <h4 class="alert-heading">Under construction</h4>
+        TheFandomNetwork is still underconstruction. 
+      </div>
+<div class="container">
+  <div class="lead well">
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="<%= @post.gravatar %>">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= @post.first_name %> <%= @post.last_name %></h4>
+        <%= @post.post %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+          
+      <% @post.comments.each do |comment| %>
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" src="<%= comment.gravatar %>">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><%= comment.email %> answered:</h4>
+              <div><%= time_ago_in_words comment.created_at %> ago</div>
+              <%= comment.post %>
+            </div>
+          </div>
+        <% end %>
+
+        
+
+        <div>
+        <%= form_for :comment, url: '/comments', html: { class: 'form-horizontal' } do %>
+        <textarea class="form-control" name="comment[post]" rows="2" id="comment" placeholder="Hello <%= current_user.first_name %> what would you like to say?"></textarea> 
+          <input type="hidden" name="comment[email]" value="<%= current_user.email %>"/>
+          <input type="hidden" name="comment[first_name]" value="<%= current_user.first_name %>" />
+          <input type="hidden" name="comment[last_name]" value="<%= current_user.last_name %>" />
+          <input type="hidden" name="comment[post_id]" value="<%= @post.id %>" />
+          <button type="submit" class="btn btn-primary">Post </button>
+        <% end %> 
+         </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
