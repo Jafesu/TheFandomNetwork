@@ -13,6 +13,7 @@
 	        <input type="hidden" name="post[email]" value="<%= current_user.email %>"/>
 	        <input type="hidden" name="post[first_name]" value="<%= current_user.first_name %>" />
 	        <input type="hidden" name="post[last_name]" value="<%= current_user.last_name %>" />
+	        <input type="hidden" name="post[user_id]"" value="<%= current_user.id %>"/>
 	        <button type="submit" class="btn btn-primary">Post </button>
 	       </div>
 	    <% end %>
