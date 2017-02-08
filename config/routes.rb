@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   get 'users/show/:id' => 'users#show'
+  get 'users/show' => root_path
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
