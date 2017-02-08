@@ -1,6 +1,8 @@
 <% if current_user.id == @user.id %>
+
 <a href="/users/<%= @user.id %>/edit"></a>
 <% else %>
+<h1>NOPE!</h1>
 <% end %>
 <div align="center">
 <%= gravatar_for @user, size: 150 %>
