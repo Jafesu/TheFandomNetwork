@@ -14,7 +14,6 @@
 	        <input type="hidden" name="post[first_name]" value="<%= current_user.first_name %>" />
 	        <input type="hidden" name="post[last_name]" value="<%= current_user.last_name %>" />
 	        <input type="hidden" name="post[user_id]"" value="<%= current_user.id %>"/>
-	        <%= f.label :image %><br>
 	        <%= f.file_field :image %>
 	        <button type="submit" class="btn btn-primary">Post </button>
 	       </div>
