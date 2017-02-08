@@ -5,7 +5,8 @@
 <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 <% if current_user.id == @user.id %>
 
-<a href="/users/<%= @user.id %>/edit">Edit Profile</a>
+<a href="/users/<%= @user.id %>/edit">Edit Profile<span class="glyphicon glyphicon-pencil
+"></span></a>
 <% else %>
 <h1>NOPE!</h1>
 <% end %>
