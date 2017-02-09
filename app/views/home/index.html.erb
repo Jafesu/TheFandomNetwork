@@ -26,7 +26,7 @@
     <div class="card-deck">
 		  <div class="card">
 		    <div class="card-block">
-		      <h4 class="card-title well"><%= image_tag @user.avatar.url(:thumb) %> <a href="/users/show/<%= q.user_id %>" ><%= q.first_name %> <%= q.last_name %></a></h4>
+		      <h4 class="card-title well"><%= image_tag @user(q.user_id).avatar.url(:thumb) %> <a href="/users/show/<%= q.user_id %>" ><%= q.first_name %> <%= q.last_name %></a></h4>
 		      <p class="card-text"><%= q.post %></p>
 		     <% if q.image.file? %>
 		      <p class="card-text"><%= image_tag q.image.url(:medium) %></p>
