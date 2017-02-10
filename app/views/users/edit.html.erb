@@ -1,1 +1,17 @@
-<h1>EDIT YOUR PROFILE</h1>
+<h1 align="center">EDIT YOUR PROFILE</h1>
+
+
+<div align="center" class="jumbotron">
+<div align="center"><img class="img-circle" src="<%= @user.avatar.url(:large) %>" height="150px" width="150px"/></div>
+<%= f.file_field :avatar %>
+<h1 class="display-3"><%= @user.first_name %> <%= @user.last_name %></h1>
+<% if current_user.id == @user.id %>
+<a href="/users/<%= @user.id %>/edit">Edit your Profile<i class="glyphicon glyphicon-pencil"></i></a>
+<% else %>
+<% end %>
+<hr class="my-2">
+	<h2 class="lead" style="font-weight: bold;">About Me:</h2>
+  <textarea value="<%= @user.bio %>"></textarea>
+  
+  
+</div>
