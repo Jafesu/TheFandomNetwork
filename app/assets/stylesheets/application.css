@@ -202,3 +202,7 @@ body {
 .border{
     margin-top: 80px;
 }
+.title{
+    font-weight: bold;
+    font-size: 63px;
+}
