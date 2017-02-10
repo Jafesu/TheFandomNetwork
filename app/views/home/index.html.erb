@@ -34,7 +34,7 @@
 		     <% else %>
 		     <% end %>
 		      <p class="card-text date">Posted <%= time_ago_in_words q.created_at %> ago
-		      </br> <button type="button" class="btn btn-xs btn-primary">View Comments</button></p>
+		      </br> <a style="color: white;" href="<%= post_path(q) %>"><button type="button" class="btn btn-xs btn-primary"> View Comments </button></a></p>
 		    </div>
 		  </div>
 		  

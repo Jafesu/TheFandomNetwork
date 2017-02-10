@@ -7,14 +7,17 @@
     <div class="media">
       <div class="media-left">
         <a href="#">
-          <img class="media-object" src="<%= @post.gravatar %>">
+          <img class="media-object img-circle" src="<%= @post.avatarurl %>">
         </a>
       </div>
       <div class="media-body">
         <h4 class="media-heading"><%= @post.first_name %> <%= @post.last_name %></h4>
         <%= @post.post %>
 
+        <% if @post.image.file? %>
         <%= image_tag @post.image.url(:medium) %>
+        <% else %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -28,7 +31,7 @@
           <div class="media">
             <div class="media-left">
               <a href="#">
-                <img class="media-object" src="<%= comment.gravatar %>">
+                <img class="media-object" src="<%= comment.avatarurl %>">
               </a>
             </div>
             <div class="media-body">
