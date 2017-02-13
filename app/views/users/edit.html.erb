@@ -3,7 +3,9 @@
 
 <div align="center" class="jumbotron">
 <div align="center"><img class="img-circle" src="<%= @user.avatar.url(:large) %>" height="150px" width="150px"/></div>
-<%= f.file_field :avatar %>
+<%= form_for @user, url: users_path, html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %>
+<% end %>
 <h1 class="display-3"><%= @user.first_name %> <%= @user.last_name %></h1>
 <% if current_user.id == @user.id %>
 <a href="/users/<%= @user.id %>/edit">Edit your Profile<i class="glyphicon glyphicon-pencil"></i></a>
@@ -11,7 +13,7 @@
 <% end %>
 <hr class="my-2">
 	<h2 class="lead" style="font-weight: bold;">About Me:</h2>
-  <textarea value="<%= @user.bio %>"></textarea>
+  <textarea value="<%= @user.bio %>" rows="5" cols="60"></textarea>
   
   
 </div>
